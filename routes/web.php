@@ -26,6 +26,8 @@ Route::prefix('contacts')
 ->name('contacts.')
 ->group(function(){
     Route::get('/', 'index')->name('index');
+    Route::get('/create', 'create')->name('create');
+
 
 });
 
