@@ -22,7 +22,9 @@ contacts.index
                         <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 rounded-tl rounded-bl">Id</th>
                         <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">氏名</th>
                         <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">件名</th>
-                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">登録日</th>                        </tr>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">登録日</th>
+                        <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">詳細</th>                        </tr>
+                       </tr>
                     </thead>
                     <tbody>
                     @foreach($contacts as $contact)
@@ -32,8 +34,10 @@ contacts.index
                         <td class="border-t-2 border-gray-200 px-4 py-3">{{ $contact->name  }}</td>
                         <td class="border-t-2 border-gray-200 px-4 py-3">{{ $contact->title  }}</td>
                         <td class="border-t-2 border-gray-200 px-4 py-3">{{ $contact->created_at }}</td>
+                        <td class="border-t-2 border-gray-200 px-4 py-3"><a class="text-blue-500" href="{{ route('contacts.show', ['id' => $contact->id]) }}">詳細を見る</a></td>
+
                     </tr>
-                    
+
                     @endforeach
                     </tbody>
                     </table>
